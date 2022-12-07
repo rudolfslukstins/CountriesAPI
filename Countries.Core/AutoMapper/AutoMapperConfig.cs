@@ -15,6 +15,9 @@ public class AutoMapperConfig
                 .ForMember(country => country.Area,
                     options =>
                         options.MapFrom(country => country.Area))
+                .ForMember(country => country.Region,
+                    options =>
+                        options.MapFrom(country => country.Region))
                 .ForMember(country => country.TopLevelDomain,
                     options =>
                         options.MapFrom(country => country.TopLevelDomain.First()));

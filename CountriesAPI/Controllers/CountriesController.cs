@@ -31,10 +31,12 @@ namespace CountriesAPI.Controllers
         [Route("Oceania-Population/Top10")]
         public async Task<IActionResult> GetTopTenCountriesByPopulationInOceania()
         {
+            _logger.LogInformation("Executing GetTopTenCountriesByPopulationInOceania");
+
             var countriesInOceania = await _countriesData.GetAllCountriesInOceania();
             var topTenCountriesByPopulation = _service.FilterCountriesByPopulation(countriesInOceania);
-            
-            _logger.LogInformation("Executing GetTopTenCountriesByPopulationInOceania");
+
+            _logger.LogInformation($"Found {topTenCountriesByPopulation.Count()} entries");
 
             return Ok(topTenCountriesByPopulation);
         }
@@ -43,10 +45,12 @@ namespace CountriesAPI.Controllers
         [Route("Oceania-Population-Density/Top10")]
         public async Task<IActionResult> GetTopTenByPopulationDensityInOceania()
         {
+            _logger.LogInformation("Executing GetTopTenCountriesByPopulationDensityInOceania");
+
             var countriesInOceania = await _countriesData.GetAllCountriesInOceania();
             var topTenCountriesByPopulationDensity = _service.FilterCountriesByPopulationDensity(countriesInOceania);
 
-            _logger.LogInformation("Executing GetTopTenCountriesByPopulationDensityInOceania");
+            _logger.LogInformation($"Found {topTenCountriesByPopulationDensity.Count()} entries");
 
             return Ok(topTenCountriesByPopulationDensity);
         }
@@ -55,18 +59,20 @@ namespace CountriesAPI.Controllers
         [Route("Oceania-Country/{name}")]
         public async Task<IActionResult> GetOceaniaCountryByName(string name)
         {
-            var countryInOceania = await _countriesData.GetOceaniaCountryByName(name);
-            
-            if (countryInOceania == null)
+            _logger.LogInformation($"Searching for country: {name}");
+
+            var searchCountryByName = await _countriesData.GetOceaniaCountryByName(name);
+            var countryInOceania = _service.FilterCountriesByRegion(searchCountryByName);
+
+            if (countryInOceania?.Any() == false)
             {
-                _logger.LogError($"Country with name {name} not found!");
-               
+                _logger.LogWarning($"Country with name {name} not found!");
+
                 return NotFound($"Country by the name {name} not found!");
             }
-            var countryWithOutName = _mapper.Map<Countries.Core.Models.Countries>(countryInOceania.First());
-            
-            _logger.LogInformation("Executing GetOceaniaCountryByName");
-            
+
+            var countryWithOutName = _mapper.Map<CountryData>(countryInOceania.First());
+
             return Ok(countryWithOutName);
         }
 

@@ -34,7 +34,7 @@ public class DataConsumerTests
     [TestMethod]
     public async Task GetOceaniaCountryByName_ShouldNotBeNull()
     {
-        string name = "peru";
+        string name = "australia";
         var oceaniaCountry = await _data.GetOceaniaCountryByName(name);
 
         oceaniaCountry.Should().NotBeNull();
@@ -43,7 +43,7 @@ public class DataConsumerTests
     [TestMethod]
     public async Task GetOceaniaCountryByName_ShouldReturnOneCountry()
     {
-        string name = "peru";
+        string name = "australia";
         var oceaniaCountry = await _data.GetOceaniaCountryByName(name);
 
         oceaniaCountry.Count().Should().Be(1);

@@ -9,4 +9,5 @@ public class Countries
     public int Population { get; set; }
     [JsonPropertyName("tld")]
     public List<string> TopLevelDomain { get; set; }
+    public string Region { get; set; }
 }
