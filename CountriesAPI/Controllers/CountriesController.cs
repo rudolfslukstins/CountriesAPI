@@ -13,12 +13,12 @@ namespace CountriesAPI.Controllers
 
         private readonly ILogger<CountriesController> _logger;
         private readonly IApiDataConsumer _countriesData;
-        private readonly IOceaniaCountriesService _service;
+        private readonly IOceaniaCountriesFilter _service;
         private readonly IMapper _mapper;
 
         public CountriesController(ILogger<CountriesController> logger,
             IApiDataConsumer countriesData,
-            IOceaniaCountriesService service,
+            IOceaniaCountriesFilter service,
             IMapper mapper)
         {
             _logger = logger;

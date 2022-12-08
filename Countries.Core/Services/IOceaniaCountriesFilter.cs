@@ -1,6 +1,6 @@
 ﻿namespace Countries.Service;
 
-public interface IOceaniaCountriesService
+public interface IOceaniaCountriesFilter
 {
     IEnumerable<Core.Models.Countries> FilterCountriesByPopulation(
         IEnumerable<Core.Models.Countries> countries);

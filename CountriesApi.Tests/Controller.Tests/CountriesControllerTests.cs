@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Countries.Core.AutoMapper;
 using Countries.Data;
 using Countries.Service;
 using CountriesAPI.Controllers;
@@ -15,7 +16,7 @@ public class CountriesControllerTests
     private Mock<IApiDataConsumer> _dataConsumerMock;
     private Mock<ILogger<CountriesController>> _loggerMock;
     private Mock<IMapper> _mapperMock;
-    private Mock<IOceaniaCountriesService> _countryServiceMock;
+    private Mock<IOceaniaCountriesFilter> _countryServiceMock;
     private CountriesController _controller;
 
 
@@ -25,7 +26,7 @@ public class CountriesControllerTests
         _dataConsumerMock = new Mock<IApiDataConsumer>();
         _loggerMock = new Mock<ILogger<CountriesController>>();
         _mapperMock = new Mock<IMapper>();
-        _countryServiceMock = new Mock<IOceaniaCountriesService>();
+        _countryServiceMock = new Mock<IOceaniaCountriesFilter>();
         _controller = new CountriesController(_loggerMock.Object, _dataConsumerMock.Object, _countryServiceMock.Object, _mapperMock.Object);
     }
 
@@ -63,7 +64,7 @@ public class CountriesControllerTests
     {
 
         var name = "australia";
-        var list = new List<global::Countries.Core.Models.Countries> { new global::Countries.Core.Models.Countries() };
+        var list = new List<global::Countries.Core.Models.Countries> { new() };
         _dataConsumerMock.Setup(country => country.GetOceaniaCountryByName(name))
             .ReturnsAsync(list);
 

@@ -21,6 +21,7 @@
     <Folder Include="Controller.Tests\" />
     <Folder Include="CountriesService.Tests\" />
     <Folder Include="DataConsumer.Tests\" />
+    <Folder Include="Mapper.Tests\" />
   </ItemGroup>
 
   <ItemGroup>

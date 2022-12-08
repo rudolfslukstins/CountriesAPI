@@ -24,7 +24,7 @@ public class DataConsumerTests
     }
 
     [TestMethod]
-    public async Task GetAllOceaniaCountries_ShouldReturnAllOceaniaCountries()
+    public async Task GetAllOceaniaCountries_ShouldReturn27Countries()
     {
         var oceaniaCountries = await _data.GetAllCountriesInOceania();
 

@@ -2,7 +2,7 @@
 
 namespace Countries.Core.AutoMapper;
 
-public class AutoMapperConfig
+public class AutoMapperConfig : Profile
 {
     public static IMapper CreateMapper()
     {
@@ -10,7 +10,7 @@ public class AutoMapperConfig
         {
             cfg.CreateMap<Models.Countries, CountryData>()
                 .ForMember(country => country.Population,
-                    options => 
+                    options =>
                         options.MapFrom(country => country.Population))
                 .ForMember(country => country.Area,
                     options =>

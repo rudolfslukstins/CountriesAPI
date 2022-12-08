@@ -10,7 +10,7 @@ namespace CountriesApi.Tests.CountriesService.Tests;
 public class CountryServiceTests
 {
     private IApiDataConsumer _data;
-    private IOceaniaCountriesService _countryService;
+    private IOceaniaCountriesFilter _countryService;
 
     private readonly List<global::Countries.Core.Models.Countries> _testList =
         new()
@@ -76,7 +76,7 @@ public class CountryServiceTests
     public void Setup()
     {
         _data = RestService.For<IApiDataConsumer>("https://restcountries.com");
-        _countryService = new OceaniaCountriesService();
+        _countryService = new OceaniaCountriesFilter();
 
     }
 

@@ -1,6 +1,4 @@
-﻿using Countries.Core.Models;
-
-namespace Countries.Core.AutoMapper;
+﻿namespace Countries.Core.AutoMapper;
 
 public class CountryData
 {

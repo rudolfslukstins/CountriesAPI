@@ -4,7 +4,7 @@ using Countries.Data;
 
 namespace Countries.Service
 {
-    public class OceaniaCountriesService : IOceaniaCountriesService
+    public class OceaniaCountriesFilter : IOceaniaCountriesFilter
     {
         public IEnumerable<Core.Models.Countries> FilterCountriesByPopulation(
             IEnumerable<Core.Models.Countries> countries)

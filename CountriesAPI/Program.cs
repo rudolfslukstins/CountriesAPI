@@ -15,10 +15,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services
     .AddRefitClient<IApiDataConsumer>()
-    .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://restcountries.com/"));
+    .ConfigureHttpClient(c => c.BaseAddress = new Uri(builder.Configuration["CountriesServiceEndpoint"]));
 
 builder.Services
-    .AddScoped<IOceaniaCountriesService,OceaniaCountriesService>();
+    .AddScoped<IOceaniaCountriesFilter, OceaniaCountriesFilter>();
 
 builder.Services
     .AddSingleton(AutoMapperConfig.CreateMapper());
