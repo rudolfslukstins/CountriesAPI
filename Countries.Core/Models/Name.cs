@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Countries.Core.Models;
+﻿namespace Countries.Core.Models;
 
 public class Name
 {

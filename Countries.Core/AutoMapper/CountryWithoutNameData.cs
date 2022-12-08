@@ -1,6 +1,6 @@
 ﻿namespace Countries.Core.AutoMapper;
 
-public class CountryData
+public class CountryWithoutNameData
 {
     public double Area { get; set; }
     public int Population { get; set; }

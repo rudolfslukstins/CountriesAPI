@@ -71,7 +71,7 @@ namespace CountriesAPI.Controllers
                 return NotFound($"Country by the name {name} not found!");
             }
 
-            var countryWithOutName = _mapper.Map<CountryData>(countryInOceania.First());
+            var countryWithOutName = _mapper.Map<CountryWithoutNameData>(countryInOceania.First());
 
             return Ok(countryWithOutName);
         }

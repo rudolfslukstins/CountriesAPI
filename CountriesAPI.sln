@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countries.Data", "Countries
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countries.Core", "Countries.Core\Countries.Core.csproj", "{4E16E0FE-7D29-4736-8389-332DF3BABE66}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countries.Service", "Countries.Service\Countries.Service.csproj", "{FC5A3E66-7969-4E8C-A3FA-98FD4BE02A72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Countries.Integrations", "Countries.Service\Countries.Integrations.csproj", "{FC5A3E66-7969-4E8C-A3FA-98FD4BE02A72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountriesApi.Tests", "CountriesApi.Tests\CountriesApi.Tests.csproj", "{BC114008-186E-4A57-8A11-4816ABC5B6C7}"
 EndProject

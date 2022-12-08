@@ -1,11 +1,7 @@
 ﻿using AutoMapper;
 using Countries.Core.AutoMapper;
 using Countries.Core.Models;
-using Countries.Data;
-using Countries.Service;
 using FluentAssertions;
-using Moq;
-using Refit;
 
 namespace CountriesApi.Tests.Mapper.Tests;
 
@@ -17,18 +13,13 @@ public class MapperTests
     [TestMethod]
     public void AutoMapper_Configuration_IsValid()
     {
-        var mapperConfig = new MapperConfiguration(
-            cfg => { cfg.AddProfile(new AutoMapperConfig()); });
-
-        IMapper mapper = new AutoMapper.Mapper(mapperConfig);
-
-        mapper.ConfigurationProvider.AssertConfigurationIsValid();
+        _mapper.ConfigurationProvider.AssertConfigurationIsValid();
     }
 
     [TestMethod]
     public void AutoMapper_InsertCountry_ShouldReturnRightValues()
     {
-        var test = new global::Countries.Core.Models.Countries()
+        var test = new global::Countries.Core.Models.Country()
         {
             Name = new Name
             {
@@ -51,7 +42,7 @@ public class MapperTests
             TopLevelDomain = new List<string>() { ".lv" }
         };
 
-        var result = _mapper.Map<CountryData>(test);
+        var result = _mapper.Map<CountryWithoutNameData>(test);
         
         result.Area.Should().Be(2.7d);
         result.Population.Should().Be(200000);

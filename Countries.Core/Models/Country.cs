@@ -2,7 +2,7 @@
 
 namespace Countries.Core.Models;
 
-public class Countries
+public class Country
 {
     public Name Name { get; set; }
     public double Area { get; set; }

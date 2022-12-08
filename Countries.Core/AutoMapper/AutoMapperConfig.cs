@@ -8,7 +8,7 @@ public class AutoMapperConfig : Profile
     {
         var config = new MapperConfiguration(cfg =>
         {
-            cfg.CreateMap<Models.Countries, CountryData>()
+            cfg.CreateMap<Models.Country, CountryWithoutNameData>()
                 .ForMember(country => country.Population,
                     options =>
                         options.MapFrom(country => country.Population))

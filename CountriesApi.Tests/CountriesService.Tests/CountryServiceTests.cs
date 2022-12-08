@@ -12,7 +12,7 @@ public class CountryServiceTests
     private IApiDataConsumer _data;
     private IOceaniaCountriesFilter _countryService;
 
-    private readonly List<global::Countries.Core.Models.Countries> _testList =
+    private readonly List<global::Countries.Core.Models.Country> _testList =
         new()
         {
             new()

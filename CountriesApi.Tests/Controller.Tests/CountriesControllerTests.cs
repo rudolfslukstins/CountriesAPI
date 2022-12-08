@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
-using Countries.Core.AutoMapper;
 using Countries.Data;
 using Countries.Service;
 using CountriesAPI.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
-using Countries = Countries.Core.Models.Countries;
+using Countries = Countries.Core.Models.Country;
 
 namespace CountriesApi.Tests.Controller.Tests;
 
@@ -64,7 +63,7 @@ public class CountriesControllerTests
     {
 
         var name = "australia";
-        var list = new List<global::Countries.Core.Models.Countries> { new() };
+        var list = new List<global::Countries.Core.Models.Country> { new() };
         _dataConsumerMock.Setup(country => country.GetOceaniaCountryByName(name))
             .ReturnsAsync(list);
 

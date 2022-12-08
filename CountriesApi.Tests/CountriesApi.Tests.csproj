@@ -27,7 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Countries.Core\Countries.Core.csproj" />
     <ProjectReference Include="..\Countries.Data\Countries.Data.csproj" />
-    <ProjectReference Include="..\Countries.Service\Countries.Service.csproj" />
+    <ProjectReference Include="..\Countries.Service\Countries.Integrations.csproj" />
     <ProjectReference Include="..\CountriesAPI\CountriesAPI.csproj" />
   </ItemGroup>
 
