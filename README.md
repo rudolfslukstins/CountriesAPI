@@ -45,4 +45,9 @@ This is a technical task for a company SIA "28Stone". Project contains an WebAPI
  
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/108486650/206171079-91801a6c-ecc8-4c15-b165-7b6758475b9c.gif)
 
+
+### How to run tests: 
+
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/108486650/206425334-74e6333e-be82-4856-9baa-d54dbda391d9.gif)
+
     
